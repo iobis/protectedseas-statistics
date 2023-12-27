@@ -3,4 +3,5 @@
 ## Run
 
 - Download spatial data to `shapes`
-- Run `gbif_extract.R`
+- Download GBIF parquet snapshot
+- Set H3 resolution and run `gbif_extract.R`
