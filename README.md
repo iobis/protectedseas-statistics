@@ -2,4 +2,5 @@
 
 ## Run
 
-- `gbif_extract.R`
+- Download spatial data to `shapes`
+- Run `gbif_extract.R`
