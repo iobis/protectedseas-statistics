@@ -1,0 +1,8 @@
+.DS_Store
+.Rhistory
+gbif.db
+obis.db
+*.Rproj
+shapes
+.Rproj.user
+
