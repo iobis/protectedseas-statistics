@@ -21,6 +21,8 @@ walk(seq_along(shapes$SITE_ID), function(i) {
     if (!is.null(result)) {
       cells <- result[[1]]
       st$set(site_id, cells)
+    } else {
+      file.create(glue::glue("shapes_errors/{site_id}.txt"))
     }
   }
 }, .progress = TRUE)

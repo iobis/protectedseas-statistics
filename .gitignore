@@ -1,8 +1,8 @@
 .DS_Store
 .Rhistory
-gbif.db
-obis.db
 *.Rproj
 shapes
 .Rproj.user
 shapes_storr
+shapes_errors
+*.sqlite
