@@ -2,11 +2,13 @@
 
 ## Run
 
-- Remove `database.sqlite` to start from scratch
+- Configure H3 resolution and data sources in `common.R`
 - Download spatial data to `shapes`
-- Set H3 resolution and run `index_shapes.R`
+- Delete `storr` caches if necessary
+- Run `index_shapes.R`
 - Check shape indexing errors in `shapes_errors`
 - Download OBIS parquet snapshot
-- Set H3 resolution and run `obis_extract.R`
+- Run `obis_extract.R`
 - Download GBIF parquet snapshot
-- Set H3 resolution and run `gbif_extract.R`
+- Run `gbif_extract.R`
+- Run `gbif_sqlite.R`

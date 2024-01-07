@@ -3,10 +3,10 @@ library(dplyr)
 library(h3jsr)
 library(purrr)
 library(glue)
+source("common.R")
 
-h3_res <- 7
-layers <- st_layers("shapes/Navigator_Global_121923/Navigator_Global_121923.shp")$name
-shapes <- read_sf("shapes/Navigator_Global_121923/Navigator_Global_121923.shp")
+layers <- st_layers(shapefile_path)$name
+shapes <- read_sf(shapefile_path)
 
 st <- storr::storr_rds("shapes_storr")
 

@@ -1,45 +1,25 @@
 library(dplyr)
-library(arrow)
-library(h3jsr)
 library(DBI)
 library(rgbif)
 library(purrr)
-library(furrr)
 library(worrms)
 library(tidyr)
-library(sf)
 library(glue)
 source("common.R")
 
-occurrence_table <- "obis_occurrence"
-taxa_table <- "obis_taxa"
-
+st <- storr::storr_rds("gbif_storr")
+parquet_files <- list.files(gbif_snapshot_path)
 con <- dbConnect(RSQLite::SQLite(), sqlite_file)
 
-# index occurrences to h3 and create occurrence table
+dbSendQuery(con, glue("drop table {gbif_occurrence_table}"))
 
-dbSendQuery(con, "drop table obis_occurrence")
+for (parquet_file in parquet_files) {
+  message(parquet_file)
+  st$get(parquet_file) %>%
+    dbWriteTable(con, gbif_occurrence_table, ., append = TRUE)
+}
 
-f <- 4
-grid <- st_make_grid(cellsize = c(10 / f, 10 / f), offset = c(-180, -90), n = c(36 * f, 18 * f), crs = st_crs(4326))
-
-purrr::walk(seq_along(grid), function(i) {
-  bbox <- st_bbox(grid[i])
-  df <- open_dataset(obis_snapshot_path) %>%
-    select(decimalLongitude, decimalLatitude, species, AphiaID, date_year) %>%
-    filter(decimalLongitude >= bbox$xmin & decimalLongitude <= bbox$xmax & decimalLatitude >= bbox$ymin & decimalLatitude <= bbox$ymax) %>%
-    collect()
-  if (nrow(df) > 0) {
-    suppressMessages({
-      df %>%
-        mutate(h3 = point_to_cell(.[,c("decimalLongitude", "decimalLatitude")], h3_res)) %>%
-        group_by(h3, species, AphiaID) %>%
-        summarize(records = n(), max_year = max(date_year, na.rm = TRUE)) %>%
-        mutate(max_year = ifelse(is.infinite(max_year), NA, max_year)) %>%
-        dbWriteTable(con, "obis_occurrence", ., append = TRUE)
-    })
-  }
-}, .progress = TRUE)
+dbExecute(con, "vacuum")
 
 # match names and create taxa table
 
@@ -49,7 +29,7 @@ purrr::walk(seq_along(grid), function(i) {
 #     bind_rows(.id = "input")
 # }, otherwise = NULL)
 # 
-# res <- dbSendQuery(con, "select species from occurrence group by species")
+# res <- dbSendQuery(con, glue("select species from {occurrence_table} group by species"))
 # species_names <- dbFetch(res) %>%
 #   pull(species) %>%
 #   unique() %>%
@@ -87,12 +67,13 @@ purrr::walk(seq_along(grid), function(i) {
 #   mutate_at(c("isMarine", "isBrackish"), ~replace_na(., 0)) %>%
 #   mutate(in_scope = isMarine + isBrackish > 0)
 # 
-# dbWriteTable(con, "gbif_taxa", taxa, overwrite = TRUE)
+# dbWriteTable(con, taxa_table, taxa, overwrite = TRUE)
 
 # add indexes
 
-# dbSendQuery(con, "create index gbif_occurrence_h3 on gbif_occurrence(h3)")
-# dbSendQuery(con, "create index gbif_occurrence_species on gbif_occurrence(species)")
+# dbSendQuery(con, glue("create index gbif_occurrence_h3 on {occurrence_table}(h3)"))
+# dbSendQuery(con, glue("create index gbif_occurrence_species on {occurrence_table}(species)"))
 # 
-# dbSendQuery(con, "create index gbif_taxa_input on gbif_taxa(input)")
-# dbSendQuery(con, "create index gbif_taxa_inscope on gbif_taxa(in_scope)")
+# dbSendQuery(con, glue("create index gbif_taxa_input on {taxa_table}(input)"))
+# dbSendQuery(con, glue("create index gbif_taxa_aphiaid on {taxa_table}(AphiaID)"))
+# dbSendQuery(con, glue("create index gbif_taxa_inscope on {taxa_table}(in_scope)"))

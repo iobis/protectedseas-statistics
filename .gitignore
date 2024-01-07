@@ -5,4 +5,6 @@ shapes
 .Rproj.user
 shapes_storr
 shapes_errors
+gbif_storr
 *.sqlite
+*.sqlite-journal
