@@ -14,5 +14,3 @@ for (parquet_file in parquet_files) {
     system(command)
   })
 }
-
-# dbExecute(con, "vacuum")

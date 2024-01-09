@@ -13,10 +13,7 @@ while (TRUE) {
   page <- page + 1
 }
 
-# con <- dbConnect(RSQLite::SQLite(), sqlite_file)
-
 redlist %>%
   filter(is.na(population)) %>%
   select(species = scientific_name, category) %>%
-  # dbWriteTable(con, redlist_table, ., append = FALSE)
   saveRDS(., redlist_file)

@@ -8,3 +8,4 @@ shapes_errors
 *.sqlite
 *.sqlite-journal
 *.rds
+dev.R

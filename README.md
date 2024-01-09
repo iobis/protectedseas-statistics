@@ -30,8 +30,8 @@ Index all GBIF data to the configured H3 resolution and load into sqlite. Write 
 
 - Download GBIF parquet snapshot
 - Run `gbif_index.R`
-- Run `gbif_sqlite.R` (TODO: order of scripts not correct, refactor)
 - Run `gbif_taxa.R`
+- Run `gbif_sqlite.R`
 
 ### Red List data
 
