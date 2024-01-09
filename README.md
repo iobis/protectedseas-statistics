@@ -52,7 +52,7 @@ aws s3 cp protectedseas.zip s3://obis-products/protectedseas/protectedseas.zip
 
 ## Download from AWS
 
-This dataset contains the site information and shapefile, a storr cache with species lists by site ID including full taxonomy and red list category, an RDS file with OBIS as well as GBIF taxa, and a SQLite database with H3 indexed site shapes, OBIS occurrences, and marine GBIF occurrences.
+This dataset contains the site information and shapefile, a [storr](https://richfitz.github.io/storr/articles/storr.html) cache with species lists by site ID including full taxonomy and red list category, an RDS file with OBIS as well as GBIF taxa, and a SQLite database with H3 indexed site shapes, OBIS occurrences, and marine GBIF occurrences.
 
 https://obis-products.s3.amazonaws.com/protectedseas/protectedseas.zip
 
