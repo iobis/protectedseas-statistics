@@ -5,10 +5,9 @@ library(purrr)
 library(glue)
 source("common.R")
 
-layers <- st_layers(shapefile_path)$name
 shapes <- read_sf(shapefile_path)
 
-st <- storr::storr_rds("shapes_storr")
+st <- storr::storr_rds(shapes_storr_path)
 
 polygon_to_cells_possibly = possibly(.f = h3jsr::polygon_to_cells, otherwise = NULL)
 

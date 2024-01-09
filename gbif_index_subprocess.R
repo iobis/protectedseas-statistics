@@ -10,7 +10,7 @@ suppressMessages(suppressWarnings(suppressPackageStartupMessages({
   
   args <- commandArgs(trailingOnly = TRUE)
   parquet_file <- args[1]
-  st <- storr::storr_rds("gbif_storr")
+  st <- storr::storr_rds(gbif_storr_path)
   
   if (!st$exists(parquet_file)) {
     

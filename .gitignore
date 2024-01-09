@@ -3,8 +3,8 @@
 *.Rproj
 shapes
 .Rproj.user
-shapes_storr
+*_storr
 shapes_errors
-gbif_storr
 *.sqlite
 *.sqlite-journal
+*.rds
