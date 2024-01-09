@@ -50,3 +50,7 @@ zip -0 protectedseas.zip taxa.rds sites_storr ../database.sqlite shapes
 aws s3 cp protectedseas.zip s3://obis-products/protectedseas/protectedseas.zip
 ```
 
+## Download from AWS
+
+https://obis-products.s3.amazonaws.com/protectedseas/protectedseas.zip
+
