@@ -40,7 +40,7 @@ Index all GBIF data to the configured H3 resolution and load into sqlite. Write 
 ### Query dataset
 
 - Run `indexes.R`
-- Run `query.R
+- Run `query.R`
 
 ## Upload to AWS
 
