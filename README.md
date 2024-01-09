@@ -46,7 +46,7 @@ Index all GBIF data to the configured H3 resolution and load into sqlite. Write 
 
 ```
 rm protectedseas.zip
-zip -0 protectedseas.zip taxa.rds sites_storr ../database.sqlite
-aws s3 cp --acl public-read protectedseas.zip s3://obis-products/protectedseas/protectedseas.zip
+zip -0 protectedseas.zip taxa.rds sites_storr ../database.sqlite shapes
+aws s3 cp protectedseas.zip s3://obis-products/protectedseas/protectedseas.zip
 ```
 
