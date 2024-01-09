@@ -1,4 +1,4 @@
-source("requirements.R")
+source("scripts/requirements.R")
 
 info <- read.csv("../protectedseas/shapes/Navigator_Global_121923.csv")
 
