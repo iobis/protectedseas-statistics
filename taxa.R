@@ -1,6 +1,4 @@
-library(dplyr)
-library(DBI)
-library(arrow)
+source("requirements.R")
 source("common.R")
 
 gbif_marine_taxa <- readRDS(gbif_marine_taxa_file) %>%

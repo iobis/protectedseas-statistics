@@ -1,8 +1,4 @@
-library(sf)
-library(dplyr)
-library(h3jsr)
-library(purrr)
-library(glue)
+source("requirements.R")
 source("common.R")
 
 shapes <- read_sf(shapefile_path)

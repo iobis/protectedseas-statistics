@@ -3,9 +3,6 @@ suppressMessages(suppressWarnings(suppressPackageStartupMessages({
   library(arrow)
   library(h3jsr)
   library(DBI)
-  library(purrr)
-  library(tidyr)
-  library(glue)
   source("common.R")
   
   args <- commandArgs(trailingOnly = TRUE)

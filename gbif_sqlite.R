@@ -1,10 +1,4 @@
-library(dplyr)
-library(DBI)
-library(rgbif)
-library(purrr)
-library(worrms)
-library(tidyr)
-library(glue)
+source("requirements.R")
 source("common.R")
 
 st <- storr::storr_rds("gbif_storr")

@@ -1,11 +1,4 @@
-library(dplyr)
-library(DBI)
-library(rgbif)
-library(purrr)
-library(worrms)
-library(tidyr)
-library(glue)
-library(furrr)
+source("requirements.R")
 source("common.R")
 
 con <- dbConnect(RSQLite::SQLite(), sqlite_file)

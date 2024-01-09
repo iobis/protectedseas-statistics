@@ -1,6 +1,4 @@
-library(rredlist)
-library(dplyr)
-library(DBI)
+source("requirements.R")
 source("common.R")
 
 redlist <- data.frame()

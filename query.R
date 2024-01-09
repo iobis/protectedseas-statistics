@@ -1,9 +1,4 @@
-library(sf)
-library(dplyr)
-library(h3jsr)
-library(purrr)
-library(glue)
-library(DBI)
+source("requirements.R")
 source("common.R")
 
 info <- read.csv("../protectedseas/shapes/Navigator_Global_121923.csv") # %>% filter(category_name == "IUCN MPA")
