@@ -101,4 +101,4 @@ ggplot(data = results) +
   ggtitle("Level of Fishing Protection (LFP) for vulnerable marine species") +
   facet_wrap(~category, ncol = 1)
 
-ggsave("lfp.png", width = 12, height = 8, dpi = 300, scale = 0.9, bg = "white")
+ggsave("analysis/graphs/species_ranges.png", width = 12, height = 8, dpi = 300, scale = 0.9, bg = "white")
