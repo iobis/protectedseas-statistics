@@ -2,6 +2,9 @@ source("requirements.R")
 source("common.R")
 
 con <- dbConnect(RSQLite::SQLite(), sqlite_file)
+
+# indexed shapes to sqlite
+
 st <- storr::storr_rds(shapes_storr_path)
 
 site_ids <- read_sf(shapefile_path) %>%
@@ -16,3 +19,11 @@ walk(site_ids, function(site_id) {
       dbWriteTable(con, site_cells_table, ., append = TRUE)
   }
 }, .progress = TRUE)
+
+# site info to sqlite
+
+info <- read.csv(info_file)
+
+info %>%
+  select(site_id, category_name, lfp) %>%
+  dbWriteTable(con, sites_table, ., overwrite = TRUE)

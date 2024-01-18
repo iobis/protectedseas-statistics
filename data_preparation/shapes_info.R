@@ -1,7 +1,7 @@
 source("scripts/requirements.R")
 source("scripts/common.R")
 
-info <- read.csv("../protectedseas/shapes/Navigator_Global_121923.csv")
+info <- read.csv(info_file)
 shapes <- read_sf(shapefile_path) %>%
   left_join(info, by = c("SITE_ID" = "site_id"))
 

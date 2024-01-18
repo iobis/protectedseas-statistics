@@ -15,7 +15,8 @@ species <- taxa %>%
   mutate(input = ifelse(is.na(input), species, input))
 
 vulnerable <- redlist %>%
-  filter(category %in% c("VU", "EN", "CR")) %>%
+  # filter(category %in% c("VU", "EN", "CR", "NT")) %>%
+  filter(category %in% c("LC")) %>%
   inner_join(species, by = "species")
 
 # query

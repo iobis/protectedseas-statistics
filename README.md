@@ -1,6 +1,6 @@
 # protectedseas-statistics
 
-## Run
+## Data preparation
 
 ### Configuration
 
@@ -12,8 +12,8 @@
 Index all shapes to the configured H3 resolution and load into sqlite.
 
 - Download spatial data to `shapes`
-- Run `shapes_index.R`
-- Run `shapes_sqlite.R`
+- Run `shapes_index.R` to index shapes and write to storr cache
+- Run `shapes_sqlite.R` to load indexed shapes as well as site info into sqlite
 - Check shape indexing errors in `shapes_errors`
 
 ### OBIS data
@@ -21,26 +21,30 @@ Index all shapes to the configured H3 resolution and load into sqlite.
 Index all OBIS data to the configured H3 resolution and load into sqlite. Write all OBIS taxa to RDS.
 
 - Download OBIS parquet snapshot
-- Run `obis_index.R`
-- Run `obis_taxa.R`
+- Run `obis_index.R` to index occurrences and write to storr cache
+- Run `obis_sqlite.R` to load indexed occurrences into sqlite
 
 ### GBIF data
 
 Index all GBIF data to the configured H3 resolution and load into sqlite. Write all GBIF taxa to RDS.
 
 - Download GBIF parquet snapshot
-- Run `gbif_index.R`
-- Run `gbif_taxa.R`
-- Run `gbif_sqlite.R`
+- TODO TAXON MATCHING
+- Run `gbif_index.R` to index occurrences and write to storr cache
+- Run `gbif_taxa.R` to match and resolve all GBIF species names to accepted WoRMS names and write to RDS
+- Run `gbif_sqlite.R` to load indexed occurrences with accepted names into sqlite
+
+### Combine datasets
+
+- Run `combine.R` to combine GBIF and OBIS occurrences into a single table
 
 ### Red List data
 
-- Run `redlist.R`
+- Run `redlist.R` to fetch the IUCN red list species and write to RDS
 
 ### Query dataset
 
-- Run `indexes.R`
-- Run `query.R`
+- ~~~Run `query.R`~~~
 
 ## Upload to AWS
 
