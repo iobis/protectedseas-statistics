@@ -10,3 +10,4 @@ shapes_errors
 *.rds
 dev.R
 protectedseas.zip
+data/
