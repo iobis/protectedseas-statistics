@@ -20,4 +20,6 @@ gbif_storr_path <- "gbif_storr"
 gbif_marine_species_file <- "gbif_marine_species.rds"
 taxa_file <- "taxa.rds"
 sites_table <- "sites"
-redlist_file <- "redlist.rds"
+redlist_table <- "redlist"
+
+taxa_table <- "species"

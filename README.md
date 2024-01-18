@@ -37,6 +37,7 @@ Index all GBIF data to the configured H3 resolution and load into sqlite. Write 
 ### Combine datasets
 
 - Run `combine.R` to combine GBIF and OBIS occurrences into a single table
+- Run `taxa.R` to get a full taxonomy table in sqlite
 
 ### Red List data
 
