@@ -8,6 +8,8 @@ dbSendQuery(con, glue("insert into occurrence_temp select h3, species, records, 
 dbSendQuery(con, glue("create index occurrence_temp_h3 on occurrence_temp(h3)"))
 dbSendQuery(con, glue("create index occurrence_temp_species on occurrence_temp(species)"))
 
+dbSendQuery(con, glue("drop table if exists {occurrence_table}"))
+
 dbSendQuery(con, glue("
   create table {occurrence_table} as
   select species, h3, sum(records) as records, min(min_year) as min_year, max(max_year) as max_year
@@ -22,4 +24,4 @@ dbSendQuery(con, glue("drop table if exists {gbif_occurrence_table}"))
 dbSendQuery(con, glue("create index occurrence_h3 on {occurrence_table}(h3)"))
 dbSendQuery(con, glue("create index occurrence_species on {occurrence_table}(species)"))
 
-dbSendQuery(con, glue("vacuum"))
+dbSendQuery(con, "vacuum")

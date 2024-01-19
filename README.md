@@ -61,3 +61,11 @@ This dataset contains the site information and shapefile, a [storr](https://rich
 
 https://obis-products.s3.amazonaws.com/protectedseas/protectedseas.zip
 
+## Addtional data
+
+### Marine World Heritate sites
+
+- Run `mwhs_index.R` to index shapes and write to storr cache
+
+
+
