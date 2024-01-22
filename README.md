@@ -67,5 +67,6 @@ https://obis-products.s3.amazonaws.com/protectedseas/protectedseas.zip
 
 - Run `mwhs_index.R` to index shapes and write to storr cache
 
+### Add more H3 resolutions
 
-
+- Run `h3_resolutions.R`
