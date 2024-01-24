@@ -8,10 +8,11 @@ con <- dbConnect(RSQLite::SQLite(), sqlite_file)
 res <- dbSendQuery(con, "select distinct(h3) from occurrence")
 cells <- dbFetch(res) %>%
   pull(h3)
+area <- as.integer(h3jsr::cell_area(cells))
 parent_cells <- h3jsr::get_parent(cells, new_res)
 
-h3 <- data.frame(cells, parent_cells) %>%
-  setNames(c(glue("h3_{h3_res}"), glue("h3_{new_res}")))
+h3 <- data.frame(cells, parent_cells, area) %>%
+  setNames(c(glue("h3_{h3_res}"), glue("h3_{new_res}"), glue("h3_{h3_res}_area")))
 
 dbSendQuery(con, glue("drop table if exists h3"))
 dbWriteTable(con, "h3", h3, overwrite = TRUE)
