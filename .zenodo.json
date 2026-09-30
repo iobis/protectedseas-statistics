@@ -1,0 +1,52 @@
+{
+    "title": "Statistics used in the IOC's State of the Ocean Report 2024 chapter \"Biodiversity knowledge and threats on marine life: Assessing no-take zones as a refuge for marine species\"",
+    "upload_type": "software",
+    "description": "This repository contains the code used to calculate statistics for each marine protected area provided by <a href=\"https://protectedseas.net/\">ProtectedSeas</a>, for the IOC's <i>State of the Ocean Report 2024</i> chapter \"Biodiversity knowledge and threats on marine life: Assessing no-take zones as a refuge for marine species\". The pipeline indexes ProtectedSeas site shapes together with OBIS and GBIF occurrence data to a common H3 spatial grid, resolves species names to accepted WoRMS taxonomy, adds IUCN Red List status, and combines everything into a SQLite database, <code>storr</code> caches, and RDS files with per-site species lists, which are archived to an AWS S3 bucket. The resulting statistics informed the report available on the <a href=\"https://unesdoc.unesco.org/in/documentViewer.xhtml?v=2.1.196&id=p::usmarcdef_0000390054\">UNESCO website</a>.",
+    "creators": [
+        {
+            "name": "Provoost, Pieter",
+            "orcid": "0000-0002-4236-0384",
+            "affiliation": "Ocean Biodiversity Information System, International Oceanographic Data and Information Exchange, Intergovernmental Oceanographic Commission, UNESCO"
+        },
+        {
+            "name": "Principe, Silas",
+            "orcid": "0000-0002-8059-6304",
+            "affiliation": "Ocean Biodiversity Information System, International Oceanographic Data and Information Exchange, Intergovernmental Oceanographic Commission, UNESCO"
+        }
+    ],
+    "contributors": [
+        {
+            "name": "Ocean Biodiversity Information System",
+            "type": "Producer"
+        },
+        {
+            "name": "International Oceanographic Data and Information Exchange",
+            "type": "HostingInstitution"
+        },
+        {
+            "name": "Intergovernmental Oceanographic Commission of UNESCO",
+            "type": "RightsHolder"
+        }
+    ],
+    "license": "mit",
+    "keywords": [
+        "marine protected areas",
+        "no-take zones",
+        "OBIS",
+        "GBIF",
+        "H3 spatial indexing",
+        "State of the Ocean Report"
+    ],
+    "related_identifiers": [
+        {
+            "identifier": "10.25607/4wbg-d349",
+            "relation": "isSupplementTo",
+            "resource_type": "publication",
+            "scheme": "doi"
+        }
+    ],
+    "references": [
+        "IOC-UNESCO (2024). State of the Ocean Report 2024. Intergovernmental Oceanographic Commission of UNESCO. https://unesdoc.unesco.org/in/documentViewer.xhtml?v=2.1.196&id=p::usmarcdef_0000390054",
+        "ProtectedSeas. Available from https://protectedseas.net/"
+    ]
+}
