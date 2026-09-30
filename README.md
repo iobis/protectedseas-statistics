@@ -1,7 +1,7 @@
 # Statistics used in the IOC's State of the Ocean Report 2024 chapter "Biodiversity knowledge and threats on marine life: Assessing no-take zones as a refuge for marine species"
 
-<!-- [![DOI](https://img.shields.io/badge/DOI-10.5281/zenodo.19392660-blue)](https://doi.org/10.5281/zenodo.19392660) -->
-<!-- [![Products catalogue](https://raw.githubusercontent.com/iobis/badges/refs/heads/main/badges/obis-products_catalogue.svg)](https://products.obis.org/dataset/10-5281-zenodo-19392660) -->
+[![DOI](https://img.shields.io/badge/DOI-10.5281/zenodo.23063576-blue)](https://doi.org/10.5281/zenodo.23063576)
+[![Products catalogue](https://raw.githubusercontent.com/iobis/badges/refs/heads/main/badges/obis-products_catalogue.svg)](https://products.obis.org/dataset/10-5281-zenodo-23063576)
 [![IOC](https://raw.githubusercontent.com/iobis/badges/refs/heads/main/badges/ioc-hlo1_healthy_ocean.svg)](https://www.ioc.unesco.org/en/mission-and-objectives)
 
 Statistics were calculated for each protected area as provided by [ProtectedSeas](https://protectedseas.net/). You can see the resulting report at [the UNESCO website](https://unesdoc.unesco.org/in/documentViewer.xhtml?v=2.1.196&id=p::usmarcdef_0000390054&file=/in/rest/annotationSVC/DownloadWatermarkedAttachment/attach_import_d73df27f-de59-4e05-be4a-f5ee80c17780%3F_%3D390054eng.pdf&locale=en&multi=true&ark=/ark:/48223/pf0000390054/PDF/390054eng.pdf#INT_833.24_State%20of%20ocean%20report_May2024_draft.indd%3A.207683%3A5829).
