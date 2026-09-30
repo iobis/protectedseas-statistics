@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: If you use this work, please cite it as below.
+title: Protected Seas Statistics
+type: software
+url: https://github.com/iobis/protectedseas-statistics
+license: MIT
+authors:
+  - given-names: Pieter
+    family-names: Provoost
+    orcid: "https://orcid.org/0000-0002-4236-0384"
+  - family-names: silasprincipe
+    orcid: "https://orcid.org/0000-0002-8059-6304"
+  - name: Intergovernmental Oceanographic Commission of UNESCO
+    alias: IOC-UNESCO
+    website: "https://obis.org"
+date-released: 2024-06-04
