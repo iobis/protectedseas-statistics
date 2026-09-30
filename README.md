@@ -49,10 +49,6 @@ Index all GBIF data to the configured H3 resolution and load into sqlite. Write 
 
 - Run `redlist.R` to fetch the IUCN red list species and write to RDS
 
-### Query dataset
-
-- ~~~Run `query.R`~~~
-
 ## Upload to AWS
 
 ```
