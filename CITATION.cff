@@ -8,7 +8,11 @@ authors:
   - given-names: Pieter
     family-names: Provoost
     orcid: "https://orcid.org/0000-0002-4236-0384"
-  - family-names: silasprincipe
+  - given-names: Ward
+    family-names: Appeltans
+    orcid: "https://orcid.org/0000-0002-3237-4547"
+  - given-names: Silas C.
+    family-names: Principe
     orcid: "https://orcid.org/0000-0002-8059-6304"
   - name: Intergovernmental Oceanographic Commission of UNESCO
     alias: IOC-UNESCO
